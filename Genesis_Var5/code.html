@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Genesis | Professional Network</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#192540",
+              "inverse-primary": "#494bd7",
+              "secondary-container": "#5516be",
+              "on-primary-container": "#0a0081",
+              "surface-bright": "#1f2b49",
+              "error-container": "#a70138",
+              "on-tertiary": "#553777",
+              "surface": "#060e20",
+              "tertiary": "#e1c3ff",
+              "error": "#ff6e84",
+              "tertiary-dim": "#c8a5ed",
+              "outline-variant": "#40485d",
+              "primary-fixed-dim": "#8387ff",
+              "on-secondary-fixed-variant": "#5f28c8",
+              "background": "#060e20",
+              "surface-variant": "#192540",
+              "error-dim": "#d73357",
+              "on-surface-variant": "#a3aac4",
+              "secondary": "#ac8aff",
+              "primary": "#a3a6ff",
+              "primary-container": "#9396ff",
+              "on-secondary-container": "#d9c8ff",
+              "surface-container-low": "#091328",
+              "primary-dim": "#6063ee",
+              "outline": "#6d758c",
+              "surface-container": "#0f1930",
+              "secondary-fixed-dim": "#ceb9ff",
+              "on-tertiary-container": "#4c2e6d",
+              "surface-container-high": "#141f38",
+              "secondary-dim": "#8455ef",
+              "inverse-on-surface": "#4d556b",
+              "inverse-surface": "#faf8ff",
+              "on-background": "#dee5ff",
+              "on-surface": "#dee5ff",
+              "surface-container-lowest": "#000000",
+              "on-primary-fixed": "#000000",
+              "on-tertiary-fixed-variant": "#553777",
+              "secondary-fixed": "#dac9ff",
+              "surface-tint": "#a3a6ff",
+              "on-secondary-fixed": "#40009b",
+              "on-tertiary-fixed": "#361757",
+              "on-primary": "#0f00a4",
+              "on-error": "#490013",
+              "on-primary-fixed-variant": "#0e009d",
+              "tertiary-fixed": "#d6b2fc",
+              "surface-dim": "#060e20",
+              "tertiary-container": "#d6b2fc",
+              "primary-fixed": "#9396ff",
+              "tertiary-fixed-dim": "#c8a5ed",
+              "on-error-container": "#ffb2b9",
+              "on-secondary": "#280067"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #060e20; }
+        .glass-panel {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="text-on-surface selection:bg-primary/30 min-h-screen">
+<!-- Background Ambient Glows -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute top-[20%] -right-[10%] w-[30%] h-[50%] bg-secondary/10 rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-[10%] left-[20%] w-[50%] h-[30%] bg-primary-dim/10 rounded-full blur-[120px]"></div>
+</div>
+<!-- Top Navigation Bar -->
+<nav class="bg-slate-900/60 backdrop-blur-3xl text-indigo-400 dark:text-indigo-300 font-manrope text-sm font-medium tracking-tight docked full-width top-0 sticky z-50 border-b border-white/10 shadow-[0_12px_32px_rgba(0,0,0,0.4)] flex justify-between items-center w-full px-8 py-3 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold bg-gradient-to-br from-indigo-300 to-indigo-500 bg-clip-text text-transparent">Genesis</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-indigo-300 border-b-2 border-indigo-500 pb-1" href="#">Home</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors" href="#">Communities</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors" href="#">Career</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors" href="#">Resources</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="bg-surface-container-lowest border border-outline/20 rounded-full py-2 pl-10 pr-4 text-xs w-64 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all" placeholder="Search the circuit..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-white/5 rounded-full transition-all relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-slate-900"></span>
+</button>
+<button class="p-2 hover:bg-white/5 rounded-full transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="bg-gradient-to-br from-indigo-300 to-indigo-500 text-on-primary-container px-5 py-1.5 rounded-full font-semibold text-sm hover:scale-105 active:scale-95 transition-all ml-2">Post</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-white/10 ml-2">
+<img alt="User profile" data-alt="Close up professional headshot of a developer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnwhJGNRRg4lNXt02b8z186GJOf6_12Wfas6n5Az3jfuUCwknvIb1sYzR1YuadWIm3XZAAhnNzcvICmzsQA4mGAFXLGa28QPSeS6WjWJJmm3V-iBRJ59isR2_mRBk9Jp4hFV1VLMjaGrD3fuOdxJoko3A3kYeGs127YdZ_RdIPmiOuMvk7eMGOgympSeTRKwXxkYrhsQ8PSC8n9nPJkL6eehquCjEOE_fFLUor5EteMUZZvleLL_I4FGtTZAeMCLpMPKGAF_TWNRfP"/>
+</div>
+</div>
+</div>
+</nav>
+<div class="max-w-[1600px] mx-auto flex gap-6 px-8 py-8 relative">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden lg:block w-64 sticky top-24 h-[calc(100vh-120px)]">
+<div class="bg-slate-900/40 backdrop-blur-2xl flex flex-col h-full p-4 gap-2 rounded-2xl border border-white/5">
+<div class="px-4 py-4 mb-2">
+<h2 class="text-xl font-semibold text-indigo-100 font-manrope">Genesis</h2>
+<p class="text-xs text-on-surface-variant">Professional Network</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 bg-indigo-500/20 text-indigo-200 rounded-xl px-4 py-3 border border-white/10 active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-medium">Home</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-white/10 hover:text-white rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Communities</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-white/10 hover:text-white rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">work</span>
+<span>Career</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-white/10 hover:text-white rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Resources</span>
+</a>
+</nav>
+<div class="pt-4 mt-4 border-t border-white/5 flex flex-col gap-1">
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-white/10 hover:text-white rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-white/10 hover:text-white rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="text-sm">Help</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Feed Canvas -->
+<main class="flex-1 max-w-3xl">
+<!-- Welcome Header -->
+<div class="mb-8">
+<h1 class="text-4xl font-extrabold tracking-tight mb-2 text-on-surface font-headline">Welcome to Genesis</h1>
+<p class="text-on-surface-variant text-lg">Synchronizing your professional pulse with the latest in hardware engineering.</p>
+</div>
+<!-- Post Composer -->
+<div class="bg-surface-container glass-panel rounded-2xl p-5 border border-outline-variant/20 shadow-lg mb-8">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+<img alt="User profile" data-alt="Professional avatar with a modern tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTa-1-i-WkMhA0BQb-X_yab7m-qFTR6SsfPWbgzsJkrJ4okhTo1JTD6L_41CKfWcr4M9pINVPpNfU-f4jRGolbZiDrXEvSEtVaFyj78uuYjofxovMO9HDWr12k-ym2yWbXlYkH_upf-UbglO3mQvalzju0V_earrqPL8tk1zF2mW7EwqUAkitTE8yFC1I9pERlt6ldRWuLSVCuFDeuBxkqJJneV86JHUs8zNTIyGE7EMRgoTy5bjm1gfyS6Z8sbpttKR9P872x-yZv"/>
+</div>
+<div class="flex-1">
+<div class="bg-surface-container-lowest border border-outline/10 rounded-xl p-4 focus-within:border-primary/50 transition-all">
+<textarea class="bg-transparent w-full resize-none border-none focus:ring-0 text-on-surface placeholder:text-on-surface-variant h-12" placeholder="What's on your circuit board today?"></textarea>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-high text-primary transition-all">
+<span class="material-symbols-outlined">image</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high text-primary transition-all">
+<span class="material-symbols-outlined">video_library</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high text-primary transition-all">
+<span class="material-symbols-outlined">code</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high text-primary transition-all">
+<span class="material-symbols-outlined">poll</span>
+</button>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold shadow-md hover:shadow-primary/20 transition-all">Deploy</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Feed -->
+<div class="space-y-6">
+<!-- Post 1: VLSI Design -->
+<article class="bg-surface-container glass-panel rounded-2xl border border-outline-variant/10 overflow-hidden hover:border-outline-variant/30 transition-all group">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">VLSI Frontiers</h3>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">Posted by @silicon_dev • 4h ago</p>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<h2 class="text-xl font-bold mb-3 leading-snug group-hover:text-primary transition-colors">The Shift to 2nm: Overcoming Transistor Leakage in Next-Gen Architectures</h2>
+<p class="text-on-surface-variant mb-4 leading-relaxed">As we push beyond the physical limits of FinFET, the industry is betting big on Gate-All-Around (GAA) nanosheet transistors. Here's a deep dive into the thermal management strategies for the upcoming tape-outs...</p>
+<div class="rounded-xl overflow-hidden border border-outline-variant/10 aspect-video relative mb-4">
+<img alt="VLSI Architecture" class="w-full h-full object-cover" data-alt="Abstract silicon wafer circuit design with neon violet highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD48BSNkDT1nozyHgygFFCB7UBpe5-BTzUZN5cCYlPvLZpEDmLE6dIvtkANTL1CRGZRrUa7JcPXyAbUAEGlOTDQOrIPi1yrV8bDC53wfpWggzUryRV3g9TsyLtkn6t_rklgRLpgsokYgOPKc0XfHc2f4jwXiYa0z-H1kuOH-viLCEORopGWhFB16rvVjs7PgAtoW4e34kEnPEHKF2XCwjVeLasOnJtOEMf-IvclGlBcNYc9_fFcwCHYuFmPCpQsLt7ckHhexil7Mf_3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/60 to-transparent"></div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex gap-6">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">keyboard_arrow_up</span>
+<span class="text-sm font-bold">1.2k</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-secondary transition-all">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+<span class="text-sm">84</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-tertiary transition-all">
+<span class="material-symbols-outlined">share</span>
+<span class="text-sm">22</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Post 2: Embedded Systems -->
+<article class="bg-surface-container glass-panel rounded-2xl border border-outline-variant/10 overflow-hidden hover:border-outline-variant/30 transition-all">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">developer_board</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">Embedded Hub</h3>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">Posted by @firmware_wizard • 6h ago</p>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<h2 class="text-xl font-bold mb-3 leading-snug">Rust vs C++ in safety-critical Real-Time Operating Systems</h2>
+<p class="text-on-surface-variant mb-4 leading-relaxed">Memory safety in embedded systems isn't just a luxury—it's a requirement for modern automotive and medical devices. Is Rust finally ready to replace C++ for bare-metal development?</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex gap-6">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">keyboard_arrow_up</span>
+<span class="text-sm font-bold">856</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-secondary transition-all">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+<span class="text-sm">142</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-tertiary transition-all">
+<span class="material-symbols-outlined">share</span>
+<span class="text-sm">45</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Right Sidebar Widgets -->
+<aside class="hidden xl:flex flex-col gap-6 w-80 sticky top-24 h-fit">
+<!-- User Profile Summary Card -->
+<div class="bg-surface-container glass-panel rounded-2xl border border-outline-variant/10 overflow-hidden">
+<div class="h-20 bg-gradient-to-r from-primary/30 to-secondary/30 relative">
+<img alt="Profile Banner" class="w-full h-full object-cover opacity-50" data-alt="Abstract geometric tech pattern banner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUtH1T9s3KdKs1QlMtYSaHjiveME_rrDhQwy-1k2AaGMUSMWQwl674i3J9hbPAagKrShoyb1kF9pwvfZdnHQYSmDZynCXxVWAWEJPLTmAX6LV5eVrXvHj68V491JatqbcSnJyFG4lITHOjwi0UuJ4fqUWm6uZDdaenKa_dKfQ-wIaLpiCDFec4x3layQdlAGL_WW9Aq0pTIXHC-vPu6Go4IYC0A9nQix1UKnWjANKw3ZKYP7J5y1mkzWivS_djJV0zrw8iPvQ6iLpI"/>
+</div>
+<div class="px-6 pb-6 text-center -mt-10 relative z-10">
+<div class="w-20 h-20 rounded-2xl mx-auto border-4 border-surface overflow-hidden shadow-xl mb-3">
+<img alt="User" data-alt="Professional headshot profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-Mz_P39cOL7IASWWkfkCUMjqqGjFPK9q-5pkyEN4gVpaLQNK_DvJnHtzMCOpCicIBEkh1CR1o-NyQB5jjctvoqAZ79-RA0d87BgY1h8EqxCDk7HSmQuYai5wikM0opl6gPI_9Vx6mnMdupQrUKM5IBeq8ErliL5M_mHB9jdPWz_TuHyb4-O4sVYbkjEcgjdleImNncs8lQu2CGkp8SeeK9UduNM_9tu4pcY6aM-28_mmxieW-3LJmULaCY_X2VK4gxRIgMWq25-XC"/>
+</div>
+<h2 class="text-xl font-bold text-on-surface">Alex Rivera</h2>
+<p class="text-sm text-on-surface-variant mb-4">Senior FPGA Engineer @ NeuroChip</p>
+<div class="grid grid-cols-2 gap-2 text-xs">
+<div class="bg-surface-container-high rounded-xl p-3">
+<p class="text-on-surface-variant mb-1">Connections</p>
+<p class="font-bold text-on-surface">1,429</p>
+</div>
+<div class="bg-surface-container-high rounded-xl p-3">
+<p class="text-on-surface-variant mb-1">Contributions</p>
+<p class="font-bold text-on-surface">242</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Trending Topics -->
+<div class="bg-surface-container glass-panel rounded-2xl border border-outline-variant/10 p-6">
+<h3 class="font-bold text-indigo-200 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                    Trending Circuits
+                </h3>
+<ul class="space-y-4">
+<li>
+<a class="group" href="#">
+<p class="text-xs text-on-surface-variant">Embedded Systems • 12k posts</p>
+<p class="font-bold text-sm group-hover:text-primary transition-colors">#RISCV_Architecture</p>
+</a>
+</li>
+<li>
+<a class="group" href="#">
+<p class="text-xs text-on-surface-variant">Networking • 8k posts</p>
+<p class="font-bold text-sm group-hover:text-primary transition-colors">#Wi-Fi_7_Rollout</p>
+</a>
+</li>
+<li>
+<a class="group" href="#">
+<p class="text-xs text-on-surface-variant">Automation • 5.4k posts</p>
+<p class="font-bold text-sm group-hover:text-primary transition-colors">#FPGA_Acceleration</p>
+</a>
+</li>
+</ul>
+<button class="w-full mt-6 text-sm font-bold text-primary hover:text-primary-container transition-colors">View All Trends</button>
+</div>
+<!-- Suggested Communities -->
+<div class="bg-surface-container glass-panel rounded-2xl border border-outline-variant/10 p-6">
+<h3 class="font-bold text-indigo-200 mb-4">Suggested Nodes</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex gap-3 items-center">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">bolt</span>
+</div>
+<div>
+<p class="text-sm font-bold">PCB Designers</p>
+<p class="text-[10px] text-on-surface-variant">42k members</p>
+</div>
+</div>
+<button class="text-xs font-bold bg-white/5 border border-white/10 px-3 py-1 rounded-full hover:bg-white/10">Join</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex gap-3 items-center">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">smart_toy</span>
+</div>
+<div>
+<p class="text-sm font-bold">Robotics Lab</p>
+<p class="text-[10px] text-on-surface-variant">15k members</p>
+</div>
+</div>
+<button class="text-xs font-bold bg-white/5 border border-white/10 px-3 py-1 rounded-full hover:bg-white/10">Join</button>
+</div>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="px-6 py-2 flex flex-wrap gap-x-4 gap-y-2">
+<a class="text-[10px] text-on-surface-variant hover:text-on-surface" href="#">About</a>
+<a class="text-[10px] text-on-surface-variant hover:text-on-surface" href="#">Privacy</a>
+<a class="text-[10px] text-on-surface-variant hover:text-on-surface" href="#">Terms</a>
+<a class="text-[10px] text-on-surface-variant hover:text-on-surface" href="#">Advertising</a>
+<p class="text-[10px] text-on-surface-variant w-full">© 2024 Genesis Corp.</p>
+</div>
+</aside>
+</div>
+<!-- Mobile Navigation Bar -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-900/80 backdrop-blur-xl border-t border-white/10 flex justify-around items-center py-4 z-50">
+<a class="text-primary flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px]">Home</span>
+</a>
+<a class="text-on-surface-variant flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px]">Groups</span>
+</a>
+<a class="bg-primary text-on-primary rounded-full p-2 -mt-10 shadow-lg border-4 border-slate-900" href="#">
+<span class="material-symbols-outlined">add</span>
+</a>
+<a class="text-on-surface-variant flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="text-[10px]">Jobs</span>
+</a>
+<a class="text-on-surface-variant flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px]">Alerts</span>
+</a>
+</div>
+</body></html>

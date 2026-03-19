@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Genesis | Professional Obsidian</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#ff7524",
+              "tertiary": "#ffc562",
+              "surface-container-highest": "#1e2636",
+              "surface-variant": "#1e2636",
+              "outline-variant": "#424855",
+              "secondary": "#f88d36",
+              "tertiary-dim": "#eba60f",
+              "on-background": "#e0e5f6",
+              "primary-fixed-dim": "#f66700",
+              "surface": "#080e19",
+              "tertiary-container": "#fbb423",
+              "primary-container": "#ff7a2f",
+              "secondary-container": "#944a00",
+              "surface-container": "#131a27",
+              "secondary-fixed": "#ffc69f",
+              "outline": "#707584",
+              "surface-container-high": "#18202f",
+              "error-container": "#b92902",
+              "surface-container-lowest": "#000000",
+              "on-error-container": "#ffd2c8",
+              "on-surface": "#e0e5f6",
+              "on-secondary-fixed-variant": "#803f00",
+              "on-primary-fixed": "#000000",
+              "inverse-on-surface": "#4f5563",
+              "on-tertiary-container": "#523700",
+              "inverse-surface": "#f9f9ff",
+              "surface-dim": "#080e19",
+              "surface-tint": "#ff9159",
+              "secondary-dim": "#eb832c",
+              "error": "#ff7351",
+              "error-dim": "#d53d18",
+              "on-secondary-container": "#fff6f2",
+              "on-tertiary": "#5e4000",
+              "surface-container-low": "#0d1320",
+              "primary": "#ff9159",
+              "inverse-primary": "#a14100",
+              "on-secondary": "#462000",
+              "on-surface-variant": "#a6abba",
+              "secondary-fixed-dim": "#ffb37d",
+              "on-tertiary-fixed-variant": "#5e4000",
+              "background": "#080e19",
+              "primary-fixed": "#ff7a2f",
+              "surface-bright": "#232c3e",
+              "on-tertiary-fixed": "#372400",
+              "on-primary-container": "#401500",
+              "on-primary": "#531e00",
+              "tertiary-fixed-dim": "#eba60f",
+              "tertiary-fixed": "#fbb423",
+              "on-secondary-fixed": "#552800",
+              "on-primary-fixed-variant": "#4f1c00",
+              "on-error": "#450900"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #080e19;
+            color: #e0e5f6;
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(8, 14, 25, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255,145,89,0.15) 0%, rgba(8,14,25,0) 50%);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #ff9159 0%, #ff7a2f 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-6 h-16 bg-[#080e19]/60 backdrop-blur-xl z-50 shadow-[0_48px_48px_0_rgba(255,145,89,0.08)]">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-[#ff9159]">Genesis</span>
+<div class="hidden md:flex items-center gap-6 font-manrope text-sm tracking-tight">
+<a class="text-[#ff9159] font-bold border-b-2 border-[#ff9159] pb-1" href="#">Home</a>
+<a class="text-[#e0e5f6] hover:text-[#ff9159] transition-colors" href="#">Communities</a>
+<a class="text-[#e0e5f6] hover:text-[#ff9159] transition-colors" href="#">Career</a>
+<a class="text-[#e0e5f6] hover:text-[#ff9159] transition-colors" href="#">Resources</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative bg-surface-container-lowest rounded-xl flex items-center px-4 h-10 w-64">
+<span class="material-symbols-outlined text-outline text-sm mr-2">search</span>
+<input class="bg-transparent border-none text-sm focus:ring-0 text-on-surface w-full" placeholder="Search Obsidian..." type="text"/>
+</div>
+<button class="p-2 text-on-surface-variant hover:bg-[#18202f] rounded-lg transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-[#18202f] rounded-lg transition-all">
+<span class="material-symbols-outlined">add_box</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="Professional user profile avatar looking forward" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAmPDGyziOPmWPYcynZ-geLEmdnwoF85IPvQ-OsThS546q8DXd951esJldznJwk2Z25G9fFOcblqHYF9dQS1_7R2Fm-8tscVc_h_3QkGYO7v3sM_SQho35yyFSBhb098vMRPi8vrArS-pk2bikuzdKJEWspb6YBXN6JAKliNFk9b1VI4lg4qJDs20zwoZJY3t6cx2G3v9fqA4XL2n9f50Kta4KbPl00txdoXOxOvgpfdcppzoE_e9xDGW5kQ19gTuD1YwfoUMnTrBK"/>
+</div>
+</nav>
+<div class="pt-16 max-w-[1440px] mx-auto flex gap-6 px-6">
+<!-- Left Sidebar -->
+<aside class="hidden lg:flex flex-col p-4 gap-2 h-[calc(100vh-64px)] w-64 sticky top-16 bg-[#0d1320] tonal-shift">
+<div class="mb-6 px-2">
+<h2 class="text-xl font-black text-[#ff9159]">Genesis</h2>
+<p class="text-xs text-on-surface-variant font-label">Professional Obsidian</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 p-3 bg-[#18202f] text-[#ff9159] rounded-xl font-manrope text-sm font-medium transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span>Feed</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#e0e5f6] hover:bg-[#18202f]/50 rounded-xl font-manrope text-sm font-medium transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Network</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#e0e5f6] hover:bg-[#18202f]/50 rounded-xl font-manrope text-sm font-medium transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">work</span>
+<span>Jobs</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#e0e5f6] hover:bg-[#18202f]/50 rounded-xl font-manrope text-sm font-medium transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">event</span>
+<span>Events</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-[#e0e5f6] hover:bg-[#18202f]/50 rounded-xl font-manrope text-sm font-medium transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-2">
+<button class="w-full btn-primary py-3 rounded-xl text-on-primary font-bold text-sm shadow-lg active:scale-95 duration-200">
+                    Create Post
+                </button>
+</div>
+</aside>
+<!-- Main Feed -->
+<main class="flex-1 max-w-3xl py-6 space-y-6">
+<!-- Hero Banner -->
+<section class="hero-gradient p-8 rounded-xl border border-outline-variant/10 relative overflow-hidden">
+<div class="relative z-10">
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2 font-headline">Welcome to Genesis</h1>
+<p class="text-on-surface-variant max-w-md">Your professional ecosystem for modern engineering, AI insights, and collaborative growth.</p>
+</div>
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+</section>
+<!-- Composer -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/5">
+<div class="flex gap-4">
+<img alt="Avatar" class="w-10 h-10 rounded-full" data-alt="User avatar for post composer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKY78EsQwLVjf7zJCSPxh0a5h1Ojt3nM1HbyVh9MA-rUVLi7yjRay7jXxitlvBC7EjiZ_ASMPsYgTro36PW-g84yM-Lfc503dAH-Tnku2bfJnmrVclPxEAqZAEtktDsS3UT5DKiNoWRTGTAuk0WJ6lJu4dMEoH6NSl0Dk2gdq4X3zt-17IYTWUvv33M2jLB-wplA_glUaV0mPkJxMh4OCUk-8DcR918gYASX4jWQfMNKfaA-NZnok0p4orOz9LcE95Hmrknt5jQE-i"/>
+<div class="flex-1 bg-surface-container-lowest rounded-xl px-4 py-3 text-on-surface-variant cursor-pointer hover:bg-surface-container-high transition-colors text-sm">
+                        Share a professional insight or tech update...
+                    </div>
+</div>
+<div class="flex justify-between mt-4 pt-4 border-t border-outline-variant/10">
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-sm font-label">
+<span class="material-symbols-outlined text-lg">image</span> Photo
+                        </button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-sm font-label">
+<span class="material-symbols-outlined text-lg">videocam</span> Video
+                        </button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-sm font-label">
+<span class="material-symbols-outlined text-lg">article</span> Article
+                        </button>
+</div>
+<button class="text-primary font-bold text-sm px-4">Post</button>
+</div>
+</div>
+<!-- Feed Filter -->
+<div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<button class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap">Relevant</button>
+<button class="bg-surface-container-highest text-on-surface px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-bright transition-colors">Trending</button>
+<button class="bg-surface-container-highest text-on-surface px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-bright transition-colors">Latest</button>
+<button class="bg-surface-container-highest text-on-surface px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-bright transition-colors">AI &amp; ML</button>
+</div>
+<!-- Post Item 1 -->
+<article class="bg-surface-container-low rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<div class="flex">
+<!-- Voting Column -->
+<div class="w-12 flex flex-col items-center py-4 bg-surface-container-lowest/30 rounded-l-xl">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">expand_less</span>
+</button>
+<span class="text-xs font-bold my-1 text-on-surface">1.2k</span>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">expand_more</span>
+</button>
+</div>
+<!-- Content Column -->
+<div class="flex-1 p-5">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs font-bold text-primary">r/WebDev</span>
+<span class="text-on-surface-variant text-[10px]">• Posted by u/TechLead_Sarah • 4h ago</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface leading-snug mb-3 group-hover:text-primary transition-colors">React 19 is officially here: How it changes our architecture forever.</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">The introduction of the 'use' hook and the compiler is a game changer. We've been testing it in our staging environment for the last 48 hours and the performance gains are non-trivial...</p>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden mb-4 border border-outline-variant/10">
+<img alt="React 19 Tech Visualization" class="w-full h-48 object-cover opacity-80" data-alt="Modern abstract visualization of software code and react logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlFYUJf6QgkDf9aaCIsPC8OMkEVTJIu2toLzsWiWtFuRcTb-oUMoUlGXG45mzVEs5WaebHVYUUjnyToS2dAgXsusD5WTLjDGo-Yn_OIMk9OeGoih9vawLVFs8txYqYJH4r0naswe5W_c-wDe0EBHTBWsmQRS1JN5wf8JvZ-znlHFxq48CfZuuKgxzEyIAVkP7GdmOGVy00pkjX-nu49LbT7ftVYkoOHmtg26QsQpxUE9i6N0Ha978M47Mr3-tO716aHSns58x768UF"/>
+</div>
+<div class="flex gap-6 items-center">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors text-xs font-label">
+<span class="material-symbols-outlined text-lg">chat_bubble</span> 248 Comments
+                            </button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors text-xs font-label">
+<span class="material-symbols-outlined text-lg">share</span> Share
+                            </button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors text-xs font-label">
+<span class="material-symbols-outlined text-lg">bookmark</span> Save
+                            </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Post Item 2 -->
+<article class="bg-surface-container-low rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<div class="flex">
+<div class="w-12 flex flex-col items-center py-4 bg-surface-container-lowest/30 rounded-l-xl">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">expand_less</span>
+</button>
+<span class="text-xs font-bold my-1 text-on-surface">842</span>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">expand_more</span>
+</button>
+</div>
+<div class="flex-1 p-5">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs font-bold text-primary">r/ArtificialIntelligence</span>
+<span class="text-on-surface-variant text-[10px]">• Posted by u/AI_Architect • 8h ago</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface leading-snug mb-3">GPT-5 Rumors: Everything we know about the upcoming multi-modal release.</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Internal leaks suggest a massive leap in reasoning capabilities and near-perfect consistency in long-form context windows. Is the era of hallucination finally ending?</p>
+<div class="flex gap-6 items-center">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors text-xs font-label">
+<span class="material-symbols-outlined text-lg">chat_bubble</span> 156 Comments
+                            </button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors text-xs font-label">
+<span class="material-symbols-outlined text-lg">share</span> Share
+                            </button>
+</div>
+</div>
+</div>
+</article>
+</main>
+<!-- Right Sidebar -->
+<aside class="hidden xl:flex flex-col gap-6 py-6 w-80 sticky top-16">
+<!-- Profile Widget -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant/5 overflow-hidden">
+<div class="h-20 bg-gradient-to-r from-primary-container to-primary-dim opacity-40"></div>
+<div class="px-5 pb-5 -mt-10">
+<div class="relative inline-block mb-3">
+<img alt="Profile" class="w-16 h-16 rounded-xl border-4 border-surface-container-low" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdihm77RAcp0mHsKrDzmHvZDilrb-Ga1ujAC3gJiMnO6N6M-YLjMJiKHwC3EcA8IxL3HWGh8mpuz97WGZFqZIkZR8t0jm7x3Oe_Ja950kkr-TwC1EYiI741WyAkL3wUqQjvQ-s5zLj_AVvs-AImj-UO0_l8GShGSng0kDQr2DuKCGQtXpR2sVzp95EcFFX7hfOkslP0wCBg8x3M2e4wHKCk06IbON100O6kJwC8gBg6gXd7AjSaw7XNHWGtVEjAXO9FpY-SMoN6eQq"/>
+<div class="absolute bottom-1 right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-surface-container-low"></div>
+</div>
+<h4 class="font-bold text-lg text-on-surface">Alex Rivera</h4>
+<p class="text-xs text-on-surface-variant font-label mb-4">Senior Software Engineer @ Obsidian</p>
+<div class="grid grid-cols-3 gap-2 border-t border-outline-variant/10 pt-4 text-center">
+<div>
+<p class="text-sm font-bold text-on-surface">4.2k</p>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-label">Viewers</p>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">128</p>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-label">Posts</p>
+</div>
+<div>
+<p class="text-sm font-bold text-primary">850</p>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-label">Rep</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending News -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant/5 p-5">
+<div class="flex items-center justify-between mb-4">
+<h5 class="font-bold text-sm text-on-surface uppercase tracking-tight">Trending News</h5>
+<span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+</div>
+<ul class="space-y-4">
+<li>
+<a class="group block" href="#">
+<p class="text-xs font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">React 19 ships with new hooks and compiler optimization</p>
+<span class="text-[10px] text-on-surface-variant">2.4k readers • 2h ago</span>
+</a>
+</li>
+<li>
+<a class="group block" href="#">
+<p class="text-xs font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">Nvidia reveals Blackwell: The future of AI chips</p>
+<span class="text-[10px] text-on-surface-variant">1.8k readers • 5h ago</span>
+</a>
+</li>
+<li>
+<a class="group block" href="#">
+<p class="text-xs font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">Tailwind v4.0 alpha: A first look at the new engine</p>
+<span class="text-[10px] text-on-surface-variant">940 readers • 1h ago</span>
+</a>
+</li>
+</ul>
+<button class="w-full text-center text-[10px] text-primary font-bold uppercase tracking-widest mt-6 hover:underline">View all news</button>
+</section>
+<!-- Recommended Communities -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant/5 p-5">
+<h5 class="font-bold text-sm text-on-surface uppercase tracking-tight mb-4">Join Communities</h5>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-[#18202f] flex items-center justify-center text-primary font-black text-xs">UX</div>
+<div>
+<p class="text-xs font-bold text-on-surface">r/UIUX_Design</p>
+<p class="text-[10px] text-on-surface-variant">42k Members</p>
+</div>
+</div>
+<button class="text-[10px] font-bold text-primary border border-primary/30 px-3 py-1 rounded-full hover:bg-primary/10 transition-colors">JOIN</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-[#18202f] flex items-center justify-center text-primary font-black text-xs">RS</div>
+<div>
+<p class="text-xs font-bold text-on-surface">r/RustLang</p>
+<p class="text-[10px] text-on-surface-variant">18k Members</p>
+</div>
+</div>
+<button class="text-[10px] font-bold text-primary border border-primary/30 px-3 py-1 rounded-full hover:bg-primary/10 transition-colors">JOIN</button>
+</div>
+</div>
+</section>
+<!-- Footer Links -->
+<footer class="px-5 text-[10px] text-on-surface-variant font-label flex flex-wrap gap-x-4 gap-y-2 opacity-60">
+<a class="hover:text-primary" href="#">About</a>
+<a class="hover:text-primary" href="#">Privacy</a>
+<a class="hover:text-primary" href="#">Terms</a>
+<a class="hover:text-primary" href="#">Careers</a>
+<span>© 2024 Genesis Corp.</span>
+</footer>
+</aside>
+</div>
+</body></html>

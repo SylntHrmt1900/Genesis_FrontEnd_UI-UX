@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CircuitCore | ECEhive Engineering Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Syne:wght@700;800&amp;family=DM+Sans:wght@400;500&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#606161",
+              "surface-bright": "#38393f",
+              "background": "#121318",
+              "surface-container-highest": "#34343a",
+              "tertiary-container": "#dcdcdc",
+              "on-tertiary-fixed": "#1a1c1c",
+              "primary-container": "#00ff41",
+              "on-secondary": "#561f00",
+              "error-container": "#93000a",
+              "on-primary-fixed": "#002203",
+              "surface-container-lowest": "#0d0e13",
+              "on-surface-variant": "#b9ccb2",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed": "#e3e2e2",
+              "on-primary-fixed-variant": "#00530e",
+              "on-secondary-fixed-variant": "#7a3000",
+              "on-tertiary": "#2f3131",
+              "surface-dim": "#121318",
+              "surface-container-low": "#1a1b21",
+              "on-primary": "#003907",
+              "surface-container": "#1e1f25",
+              "surface-variant": "#34343a",
+              "on-secondary-container": "#572000",
+              "on-primary-container": "#007117",
+              "tertiary": "#f9f9f8",
+              "tertiary-fixed-dim": "#c6c6c6",
+              "on-secondary-fixed": "#351000",
+              "primary-fixed": "#72ff70",
+              "outline-variant": "#3b4b37",
+              "secondary-fixed": "#ffdbcc",
+              "outline": "#84967e",
+              "primary-fixed-dim": "#00e639",
+              "inverse-primary": "#006e16",
+              "surface-container-high": "#292a2f",
+              "on-background": "#e3e1e9",
+              "surface": "#121318",
+              "on-surface": "#e3e1e9",
+              "on-error": "#690005",
+              "secondary-container": "#fe6b00",
+              "primary": "#ebffe2",
+              "on-tertiary-fixed-variant": "#464747",
+              "secondary-fixed-dim": "#ffb693",
+              "secondary": "#ffb693",
+              "inverse-surface": "#e3e1e9",
+              "error": "#ffb4ab",
+              "surface-tint": "#00e639",
+              "inverse-on-surface": "#2f3036"
+            },
+            fontFamily: {
+              "headline": ["Syne", "sans-serif"],
+              "body": ["DM Sans", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "mono": ["DM Mono", "monospace"],
+              "technical": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .honeycomb-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cpath fill='%2300ff41' fill-opacity='0.03' d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9l11 6.35 11-6.35V30.6l-11 6.35L3 30.6V17.9z'/%3E%3C/svg%3E");
+        }
+        .glass-panel {
+            background: rgba(30, 31, 37, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body honeycomb-pattern min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#121318]/80 backdrop-blur-xl border-b border-[#00FF41]/20 flex items-center justify-between px-6 h-16 w-full shadow-[0_0_15px_rgba(0,255,65,0.05)]">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-[#00FF41] uppercase tracking-tighter font-technical">CircuitCore</span>
+<div class="hidden md:flex items-center gap-6">
+<nav class="flex items-center gap-6 font-technical text-sm uppercase tracking-wider">
+<a class="text-[#00FF41] border-b-2 border-[#00FF41] pb-1 hover:text-[#00FF41] hover:bg-[#00FF41]/5 transition-all duration-150" href="#">Explore</a>
+<a class="text-[#F9F9F8]/60 hover:text-[#00FF41] hover:bg-[#00FF41]/5 transition-all duration-150" href="#">Jobs</a>
+<a class="text-[#F9F9F8]/60 hover:text-[#00FF41] hover:bg-[#00FF41]/5 transition-all duration-150" href="#">Network</a>
+</nav>
+</div>
+</div>
+<div class="flex-1 max-w-xl px-8 hidden lg:block">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary-container text-sm h-10 pl-10 pr-4 placeholder:text-on-tertiary-container" placeholder="Search schematics, components, threads..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 cursor-crosshair p-2 text-[#F9F9F8]/60 hover:text-[#00FF41] hover:bg-[#00FF41]/5 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="active:scale-95 cursor-crosshair p-2 text-[#F9F9F8]/60 hover:text-[#00FF41] hover:bg-[#00FF41]/5 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</button>
+<div class="h-8 w-8 bg-surface-container-highest border border-outline-variant p-0.5">
+<img alt="Engineer Profile" class="w-full h-full object-cover" data-alt="User avatar placeholder profile image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ1HM8Ui4uwmX9Dr_HCVLYRLZEt9stUldaRCgOrN5QIBeqPOE2Cp2V5g3IEDFNqNS0SZUntVsPLHlSm1Rs_mZ2jD06eUhGhSHLTad7exGe7Vdqkbz37bacS3Y50_sAuoawH6MyVW3UkjT-awebouOU_Ou4cY-zbG5bNzawRov5thPN6xARyw5FD3gY1G-1WUYWIbiaRI0RDsULX24eqszG4ObrWXQaHEIHZB8Cmi7xHm3VN9m8m_YDZdYcmq3oblVEnQFYJ_5iUnJ9"/>
+</div>
+<button class="bg-primary-container text-on-primary-container px-4 py-1.5 text-sm font-bold uppercase tracking-tight active:scale-95 cursor-crosshair transition-all duration-150">Post</button>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar (Column 1) -->
+<aside class="hidden lg:flex flex-col h-[calc(100vh-64px)] w-64 fixed left-0 top-16 bg-[#121318] border-r border-[#00FF41]/15 z-40 overflow-y-auto">
+<div class="p-4 border-b border-[#00FF41]/10 mb-2">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 bg-primary-container rounded-full animate-pulse shadow-[0_0_8px_#00FF41]"></div>
+<div>
+<p class="text-[10px] text-[#00FF41]/60 font-mono tracking-widest uppercase">System_v1.0.4</p>
+<h3 class="font-headline text-lg uppercase leading-none text-on-surface">Navigation</h3>
+</div>
+</div>
+</div>
+<nav class="flex-1 font-technical text-sm uppercase font-medium">
+<a class="text-[#00FF41] bg-[#00FF41]/10 border-r-4 border-[#00FF41] px-4 py-3 flex items-center gap-3 transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="text-[#F9F9F8]/70 px-4 py-3 flex items-center gap-3 hover:bg-[#1c1d24] hover:text-[#00FF41] transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+<span>News</span>
+</a>
+<a class="text-[#F9F9F8]/70 px-4 py-3 flex items-center gap-3 hover:bg-[#1c1d24] hover:text-[#00FF41] transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+<span>Shorts</span>
+</a>
+<div class="mt-4 px-4 py-2 text-[10px] text-on-tertiary-container font-mono tracking-widest border-t border-outline-variant/10 uppercase">Communities</div>
+<a class="text-[#F9F9F8]/70 px-4 py-3 flex items-center gap-3 hover:bg-[#1c1d24] hover:text-[#00FF41] transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+<span>r/VLSI_Design</span>
+</a>
+<a class="text-[#F9F9F8]/70 px-4 py-3 flex items-center gap-3 hover:bg-[#1c1d24] hover:text-[#00FF41] transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="developer_board">developer_board</span>
+<span>r/EmbeddedSystems</span>
+</a>
+<a class="text-[#F9F9F8]/70 px-4 py-3 flex items-center gap-3 hover:bg-[#1c1d24] hover:text-[#00FF41] transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span>r/Career_ECE</span>
+</a>
+<a class="text-[#F9F9F8]/70 px-4 py-3 flex items-center gap-3 hover:bg-[#1c1d24] hover:text-[#00FF41] transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Study Materials</span>
+</a>
+<a class="text-[#F9F9F8]/70 px-4 py-3 flex items-center gap-3 hover:bg-[#1c1d24] hover:text-[#00FF41] transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span>Opportunities</span>
+</a>
+</nav>
+<div class="p-4 bg-[#1c1d24]/50 border-t border-[#00FF41]/10">
+<button class="w-full bg-[#00FF41]/5 border border-[#00FF41]/30 text-[#00FF41] py-2 text-xs font-bold uppercase tracking-widest hover:bg-[#00FF41]/20 transition-all">
+                    Upgrade to Pro
+                </button>
+<div class="mt-4 flex flex-col gap-1 font-technical text-[10px] uppercase">
+<a class="text-on-tertiary-container hover:text-[#00FF41] flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-xs" data-icon="settings">settings</span> Settings
+                    </a>
+<a class="text-on-tertiary-container hover:text-[#00FF41] flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-xs" data-icon="help">help</span> Support
+                    </a>
+</div>
+</div>
+</aside>
+<!-- Main Feed (Column 2) -->
+<main class="flex-1 lg:ml-64 lg:mr-80 p-6 space-y-6">
+<!-- Welcome Pinned Announcement -->
+<section class="relative bg-surface-container-low border-l-4 border-primary-container p-6 overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-6xl text-primary-container" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex-1">
+<h2 class="font-headline text-2xl uppercase text-primary-container mb-2 tracking-tight">Welcome to ECEhive!</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-2xl">
+                            The central node for electronics engineers, hobbyists, and professional makers. Start sharing your schematics, asking technical questions, or browsing the latest in semiconductor news.
+                        </p>
+<div class="mt-4 flex gap-4">
+<span class="text-[10px] font-mono text-primary-container uppercase bg-primary-container/10 px-2 py-0.5 border border-primary-container/20">PINNED_V1</span>
+<span class="text-[10px] font-mono text-secondary-container uppercase bg-secondary-container/10 px-2 py-0.5 border border-secondary-container/20">GUIDELINES</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Post Composer -->
+<section class="bg-surface-container-low border border-outline-variant/20 p-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest border border-outline-variant">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="User profile avatar miniature" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRTnaGmZ-L14AHB4g5QkoMXdeU1L0a6hKGbjjjLZEOgSNUJGycY_X690IAVe2ucRyAtiEKenCBfuDxRsHq6hIqZ5gZyhVgqSeNVCus-hPEu9aRsTlELD9MVu5tCQ5-KyGm6Rcgy4VV-HjdBdRAMWsDfP1xMKoHfRDbhiu_cgVIiga7BzTpTNdgZAvqWJ1-nRykHlVXe_kdP-4wgwoPqU6yYyCaNZWc20xlLw49fwORcQ9Xx34_XeaTeNyPzpXy9RXfuYLonrSpC-i_"/>
+</div>
+<div class="flex-1 relative">
+<input class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary-container py-3 px-4 text-sm font-technical" placeholder="Initialize a new discussion thread..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-highest text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="image">image</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Feed Filter -->
+<div class="flex items-center gap-6 border-b border-outline-variant/10 pb-4 font-technical text-xs uppercase tracking-widest text-on-tertiary-container">
+<button class="text-primary-container border-b border-primary-container pb-4 -mb-4.5">Latest_Logs</button>
+<button class="hover:text-primary-container transition-colors">Trending_Traces</button>
+<button class="hover:text-primary-container transition-colors">Most_Upvoted</button>
+<button class="hover:text-primary-container transition-colors">Unsolved_Issues</button>
+</div>
+<!-- Post Card 1 -->
+<article class="bg-surface-container border border-outline-variant/10 hover:border-primary-container/30 transition-all group flex">
+<!-- Vote Column -->
+<div class="w-12 bg-surface-container-low flex flex-col items-center py-4 border-r border-outline-variant/5">
+<button class="text-on-tertiary-container hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="expand_less" style="font-size: 32px;">expand_less</span>
+</button>
+<span class="font-mono text-sm font-bold my-1 text-on-surface">1.2k</span>
+<button class="text-on-tertiary-container hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="expand_more" style="font-size: 32px;">expand_more</span>
+</button>
+</div>
+<div class="flex-1 p-5">
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-secondary-container/10 text-secondary-container text-[10px] font-mono px-2 py-0.5 border border-secondary-container/20">r/VLSI_Design</span>
+<span class="text-[10px] text-on-tertiary-container font-mono">• Posted by u/SiliconWiz • 4h ago</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface mb-3 group-hover:text-primary-container transition-colors leading-tight">
+                        Optimizing FinFET parasitic capacitance at 3nm nodes using new lithography technique <span class="text-primary-container/60">#VLSI</span> <span class="text-primary-container/60">#Semiconductors</span>
+</h3>
+<p class="text-on-surface-variant text-sm line-clamp-3 mb-4 leading-relaxed">
+                        The move to 3nm has introduced unprecedented challenges in parasitic modeling. I've been experimenting with a modified DTCO flow that accounts for the new gate-all-around (GAA) geometry shifts. Looking for feedback on RC extraction results...
+                    </p>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-1.5 text-xs text-on-tertiary-container hover:text-primary-container transition-colors font-technical uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span> 84 Comments
+                        </button>
+<button class="flex items-center gap-1.5 text-xs text-on-tertiary-container hover:text-primary-container transition-colors font-technical uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span> Share
+                        </button>
+<button class="flex items-center gap-1.5 text-xs text-on-tertiary-container hover:text-primary-container transition-colors font-technical uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="bookmark">bookmark</span> Save
+                        </button>
+</div>
+</div>
+</article>
+<!-- Post Card 2 -->
+<article class="bg-surface-container border border-outline-variant/10 hover:border-primary-container/30 transition-all group flex">
+<div class="w-12 bg-surface-container-low flex flex-col items-center py-4 border-r border-outline-variant/5">
+<button class="text-on-tertiary-container hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="expand_less" style="font-size: 32px;">expand_less</span>
+</button>
+<span class="font-mono text-sm font-bold my-1 text-on-surface">452</span>
+<button class="text-on-tertiary-container hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="expand_more" style="font-size: 32px;">expand_more</span>
+</button>
+</div>
+<div class="flex-1 p-5">
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-secondary-container/10 text-secondary-container text-[10px] font-mono px-2 py-0.5 border border-secondary-container/20">r/EmbeddedSystems</span>
+<span class="text-[10px] text-on-tertiary-container font-mono">• Posted by u/FirmwareGoddess • 8h ago</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface mb-3 group-hover:text-primary-container transition-colors leading-tight">
+                        Critical Bug in ESP32 IDF v5.1 BLE stack discovered during stress test <span class="text-primary-container/60">#ESP32</span> <span class="text-primary-container/60">#BLE</span>
+</h3>
+<div class="aspect-video w-full bg-surface-container-highest border border-outline-variant/20 mb-4 flex items-center justify-center overflow-hidden">
+<img alt="Oscilloscope Trace" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Technical logic analyzer screen capture showing signal noise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQG3vPE8RzzHfLk4pH0O3kNZjmU_3fAWDjatRAMxGY-MzpjOb90eMp5grnBoWQ6PHSo47s1PiuB69io2n07NTYqtEWsQG_HnK2EorLv-_XJEuFwJvZDO94KAeN9qrKUP8YYegoG-Tn3CQGUcn6o2onPCcEaGPJ7k0CZqPcj2Tq6XRyWB3PnKxXGbxbouKmcdzxjFVlilVgDnDXXw0k2z_im9BctpdCkfio9nTMYLkyk5y2ik0O-Ec6L8GscZcrzIefnpRwlsSXBlYR"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-1.5 text-xs text-on-tertiary-container hover:text-primary-container transition-colors font-technical uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span> 156 Comments
+                        </button>
+<button class="flex items-center gap-1.5 text-xs text-on-tertiary-container hover:text-primary-container transition-colors font-technical uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span> Share
+                        </button>
+<button class="flex items-center gap-1.5 text-xs text-on-tertiary-container hover:text-primary-container transition-colors font-technical uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="bookmark">bookmark</span> Save
+                        </button>
+</div>
+</div>
+</article>
+</main>
+<!-- Widgets (Column 3) -->
+<aside class="hidden xl:block w-80 fixed right-0 top-16 h-[calc(100vh-64px)] p-6 space-y-6 overflow-y-auto">
+<!-- Profile Widget -->
+<section class="bg-surface-container-low border border-outline-variant/10 p-5">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-surface-container-highest border border-primary-container/40 p-0.5">
+<img alt="User" class="w-full h-full object-cover" data-alt="User profile avatar badge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjxT5DKrFXlG0uaI7qPDXYqxOs3csS2T0TfQOu6bYD3Jn-WtBUz9OQD3YSKCJdLX1_xwXclZJ55Dc8ZPFrR84ub4F-DsjESbVJDNZdI2CESciIZVwq7X9_m5Z2ED0pI19A7iiAf7nTeaCxnvuDBw3JVEXIXN2ntUJ6P42Fcta9ZFFpwYe-VW9PJCcPT6a-snq3UN0TRh4ufGrmdvp1Dt_CZ-vJRXXsr6G96HONinKE7RdBmnUnz0Gt2rCBfjNOIj9R8ZxyAzDIC_dD"/>
+</div>
+<div>
+<h4 class="font-headline text-lg text-on-surface leading-none">ENGINEER_01</h4>
+<p class="text-[10px] font-mono text-primary-container uppercase mt-1">Status: Online</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 py-3 border-y border-outline-variant/10">
+<div class="text-center">
+<p class="text-[10px] text-on-tertiary-container font-mono uppercase">Viewers</p>
+<p class="font-mono text-sm text-on-surface">128</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-on-tertiary-container font-mono uppercase">Posts</p>
+<p class="font-mono text-sm text-on-surface">42</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-on-tertiary-container font-mono uppercase">Karma</p>
+<p class="font-mono text-sm text-primary-container">8.4k</p>
+</div>
+</div>
+<button class="w-full mt-4 bg-surface-container-highest text-on-surface text-[10px] font-bold py-2 border border-outline-variant/20 uppercase tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-all">
+                    View My Dashboard
+                </button>
+</section>
+<!-- Trending Now Widget -->
+<section class="bg-surface-container-low border border-outline-variant/10 p-5">
+<div class="flex items-center justify-between mb-4">
+<h4 class="font-headline text-sm uppercase text-on-surface tracking-tight">Trending Now</h4>
+<a class="text-[10px] font-mono text-primary-container uppercase hover:underline" href="#">See all</a>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3 group">
+<div class="mt-1 w-1.5 h-1.5 bg-secondary-container rotate-45"></div>
+<div>
+<p class="text-xs text-on-surface font-medium leading-tight group-hover:text-primary-container transition-colors">ARM introduces Cortex-M52 for AI at the Edge</p>
+<p class="text-[9px] text-on-tertiary-container mt-1 uppercase">2.4k Readers • 12 Discussions</p>
+</div>
+</div>
+<div class="flex items-start gap-3 group">
+<div class="mt-1 w-1.5 h-1.5 bg-secondary-container rotate-45"></div>
+<div>
+<p class="text-xs text-on-surface font-medium leading-tight group-hover:text-primary-container transition-colors">TSMC 2nm Production Schedule Update</p>
+<p class="text-[9px] text-on-tertiary-container mt-1 uppercase">1.8k Readers • 8 Discussions</p>
+</div>
+</div>
+<div class="flex items-start gap-3 group">
+<div class="mt-1 w-1.5 h-1.5 bg-secondary-container rotate-45"></div>
+<div>
+<p class="text-xs text-on-surface font-medium leading-tight group-hover:text-primary-container transition-colors">New Open-Source FPGA Toolchain Release</p>
+<p class="text-[9px] text-on-tertiary-container mt-1 uppercase">950 Readers • 22 Discussions</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Communities to Join -->
+<section class="bg-surface-container-low border border-outline-variant/10 p-5">
+<h4 class="font-headline text-sm uppercase text-on-surface tracking-tight mb-4">Communities to Join</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-surface-container-highest border border-outline-variant">
+<img alt="Comm" class="w-full h-full object-cover" data-alt="Community icon for PCB design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTLEqWu9WMUdjpMh0Ixr-mpFLXC3MRMD5Zd958EfIMETTngNzhb-uOXcIWnjXSI9AihGMebgBpwjzTkNcWmjPBElvqvi1ejEEhqubpmV8UJQq4UTWFijQ8tQtlcuJjiKR6szu6jNAv3lYZxQmP-4DUtnNX-Qr1MEvX31vy8BDNtZnqrjr5z8THBmPaL3rhPMFnCpfxCy0xQjUkft4d4VlgyvY0q41LxhY7JDWTBQdZtelppo7t-gq_Rty-AmBb9NPjvCI1O5DzKYkC"/>
+</div>
+<span class="text-xs font-technical text-on-surface uppercase">r/PCB_Design</span>
+</div>
+<button class="text-[10px] font-bold text-primary-container border border-primary-container/40 px-3 py-1 hover:bg-primary-container hover:text-on-primary-container transition-all uppercase">+ Join</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-surface-container-highest border border-outline-variant">
+<img alt="Comm" class="w-full h-full object-cover" data-alt="Community icon for RF engineering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqiDlXRKC03dTyO8AQhZo3DLgrSy8hqTjr7s6ulswN9ikJaRvknuJBBc_VQ2rV2teJ-dCLcNQdphRPecU6YDmUSl1pj6XtNJ5wkLGnhLPrO0lKYSzyqLZsP3kbtQvEbNNvfrN34Ov8kZzHMn8w9ennhP0tc0tNJouwmn42NCPMXpUiYA-_dtkkqPJ5sMaSOdCPnaJORjVV6ClYkOGiTJq_DuAJbRLoXkwCYCVPkA2Pf1M3UbLsALcMXgUwJF-EHBNSz1xyN_knG7TU"/>
+</div>
+<span class="text-xs font-technical text-on-surface uppercase">r/RF_Engineering</span>
+</div>
+<span class="text-[10px] font-mono text-on-tertiary-container uppercase px-2 py-1 bg-surface-container-highest">Joined</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-surface-container-highest border border-outline-variant">
+<img alt="Comm" class="w-full h-full object-cover" data-alt="Community icon for open hardware" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmOxvLUAHvWKWCSdswebHg0fJaZUk-8_-gTapfbhWHrrkWz4V4-c0Zex6o8NcYtGSB-mTYQOGw6t0JWGV7HCGc29XFRJDZ5a7D25VBt0IpdayYXdvWZBFoyPdlzzlm7tz9nMYl1B3Bw0f6Bf2SenzyMAPW2x2gaGQdh16yquqw25oIdyXl0rNlmWZ839HlQEzsTuw7DWKIagdAJYzanz3-8_EkWum1Uf-epsSfKp6cqy-TZKxygkrGnhsKh6ytWq6IlcY5OeSVCsta"/>
+</div>
+<span class="text-xs font-technical text-on-surface uppercase">r/OpenHardware</span>
+</div>
+<button class="text-[10px] font-bold text-primary-container border border-primary-container/40 px-3 py-1 hover:bg-primary-container hover:text-on-primary-container transition-all uppercase">+ Join</button>
+</div>
+</div>
+</section>
+<!-- Explore Tags Widget -->
+<section class="bg-surface-container-low border border-outline-variant/10 p-5">
+<h4 class="font-headline text-sm uppercase text-on-surface tracking-tight mb-4">Explore Tags</h4>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-mono bg-surface-container-highest text-on-surface px-2 py-1 border border-outline-variant/20 hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors uppercase">#VLSI</span>
+<span class="text-[10px] font-mono bg-surface-container-highest text-on-surface px-2 py-1 border border-outline-variant/20 hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors uppercase">#5G</span>
+<span class="text-[10px] font-mono bg-surface-container-highest text-on-surface px-2 py-1 border border-outline-variant/20 hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors uppercase">#FPGA</span>
+<span class="text-[10px] font-mono bg-surface-container-highest text-on-surface px-2 py-1 border border-outline-variant/20 hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors uppercase">#RISC-V</span>
+<span class="text-[10px] font-mono bg-surface-container-highest text-on-surface px-2 py-1 border border-outline-variant/20 hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors uppercase">#ASIC</span>
+<span class="text-[10px] font-mono bg-surface-container-highest text-on-surface px-2 py-1 border border-outline-variant/20 hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors uppercase">#Kicad</span>
+<span class="text-[10px] font-mono bg-surface-container-highest text-on-surface px-2 py-1 border border-outline-variant/20 hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors uppercase">#Signal_Integrity</span>
+</div>
+</section>
+<!-- System Footer -->
+<footer class="p-4 text-center">
+<p class="text-[9px] font-mono text-on-tertiary-container uppercase tracking-widest">
+                    © 2024 CircuitCore Systems. All Traces Encrypted.
+                </p>
+</footer>
+</aside>
+</div>
+</body></html>

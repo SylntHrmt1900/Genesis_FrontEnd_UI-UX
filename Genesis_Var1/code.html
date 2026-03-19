@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Genesis | Home Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#16002c",
+                        "surface-container": "#0a1836",
+                        "surface-dim": "#060e20",
+                        "tertiary-dim": "#9c48ea",
+                        "secondary-fixed": "#d3e4fe",
+                        "surface-container-low": "#06122c",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "background": "#060e20",
+                        "on-tertiary-container": "#000000",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-fixed-dim": "#a14ef0",
+                        "on-primary": "#28329c",
+                        "secondary": "#b7c8e1",
+                        "inverse-on-surface": "#4d556b",
+                        "on-primary-fixed-variant": "#000979",
+                        "on-surface-variant": "#99aad9",
+                        "error": "#f97386",
+                        "surface-bright": "#182b52",
+                        "secondary-container": "#2d3c51",
+                        "surface-container-lowest": "#000000",
+                        "on-primary-container": "#e0e1ff",
+                        "surface-container-high": "#0f1e3f",
+                        "on-secondary-container": "#b0c0da",
+                        "outline": "#6475a1",
+                        "secondary-dim": "#a9bad3",
+                        "on-tertiary-fixed": "#000000",
+                        "outline-variant": "#364770",
+                        "primary-fixed-dim": "#747fea",
+                        "primary-container": "#3c47af",
+                        "on-error-container": "#ff97a3",
+                        "inverse-surface": "#faf8ff",
+                        "on-surface": "#dee5ff",
+                        "on-background": "#dee5ff",
+                        "error-dim": "#c44b5f",
+                        "primary-fixed": "#818cf8",
+                        "error-container": "#871c34",
+                        "inverse-primary": "#4954bc",
+                        "surface-tint": "#bdc2ff",
+                        "tertiary": "#c180ff",
+                        "tertiary-fixed": "#af5cfe",
+                        "surface-variant": "#11244c",
+                        "on-secondary": "#314156",
+                        "tertiary-container": "#af5cfe",
+                        "primary-dim": "#8a95ff",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "primary": "#bdc2ff",
+                        "surface": "#060e20",
+                        "on-tertiary": "#33005b",
+                        "on-secondary-fixed": "#314055",
+                        "on-error": "#490013",
+                        "surface-container-highest": "#11244c"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #060e20;
+            color: #dee5ff;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(17, 36, 76, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #bdc2ff, #3c47af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface-variant/60 backdrop-blur-xl shadow-2xl shadow-indigo-900/20">
+<div class="flex justify-between items-center px-8 h-16 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black bg-gradient-to-r from-[#bdc2ff] to-[#3c47af] bg-clip-text text-transparent font-manrope">Genesis</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-indigo-400 font-bold border-b-2 border-indigo-400 pb-1 font-inter text-sm" href="#">Home</a>
+<a class="text-slate-400 font-medium hover:text-slate-200 transition-all duration-300 font-inter text-sm" href="#">Communities</a>
+<a class="text-slate-400 font-medium hover:text-slate-200 transition-all duration-300 font-inter text-sm" href="#">Career</a>
+<a class="text-slate-400 font-medium hover:text-slate-200 transition-all duration-300 font-inter text-sm" href="#">Resources</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group hidden lg:block">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+</div>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:ring-1 focus:ring-primary/40 text-on-surface" placeholder="Search Genesis..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-400 hover:bg-white/5 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-white/5 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-white/5 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+<button class="ml-2 px-6 py-2 bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold rounded-full text-sm hover:scale-95 transition-all duration-200">
+                    Post
+                </button>
+</div>
+</div>
+</nav>
+<div class="flex pt-16 max-w-screen-2xl mx-auto">
+<!-- Left SideNavBar Shell -->
+<aside class="hidden lg:flex h-[calc(100vh-4rem)] w-64 fixed left-[max(0px,calc(50%-48rem))] top-16 bg-surface-container-low flex-col gap-2 py-6 overflow-y-auto">
+<div class="px-6 mb-6">
+<div class="flex items-center gap-3 p-3 bg-surface-container rounded-xl">
+<div class="h-10 w-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">AR</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">Alex Rivers</span>
+<span class="text-xs text-on-surface-variant">Product Designer</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-2">
+<a class="flex items-center gap-3 bg-indigo-500/10 text-indigo-300 rounded-full px-4 py-3 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-weight="fill">home</span>
+<span class="font-inter font-semibold tracking-wide text-sm">Home</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:text-slate-200 hover:bg-indigo-500/5 rounded-full transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-inter font-semibold tracking-wide text-sm">Communities</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:text-slate-200 hover:bg-indigo-500/5 rounded-full transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="font-inter font-semibold tracking-wide text-sm">Career</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:text-slate-200 hover:bg-indigo-500/5 rounded-full transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-inter font-semibold tracking-wide text-sm">Resources</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-1 px-2 pt-6 border-t border-outline-variant/20">
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:text-slate-200 hover:bg-indigo-500/5 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter font-semibold tracking-wide text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:text-slate-200 hover:bg-indigo-500/5 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-inter font-semibold tracking-wide text-sm">Help</span>
+</a>
+</div>
+</aside>
+<!-- Main Feed Canvas -->
+<main class="flex-1 lg:ml-64 lg:mr-80 p-8 space-y-8">
+<!-- Hero Section -->
+<section class="relative overflow-hidden rounded-xl bg-surface-container-high p-10 border border-outline-variant/10">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -mr-20 -mt-20"></div>
+<div class="relative z-10 max-w-2xl">
+<h1 class="font-headline text-4xl font-extrabold text-on-surface mb-4">Welcome to Genesis</h1>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-6">
+                        A curated space for professionals and creators to connect, share technical insights, and evolve together. Experience a social feed designed for depth, not just noise.
+                    </p>
+<div class="flex gap-4">
+<button class="px-6 py-2.5 bg-primary text-on-primary-fixed font-bold rounded-full hover:shadow-lg hover:shadow-primary/20 transition-all">Explore Communities</button>
+<button class="px-6 py-2.5 bg-surface-container text-primary font-bold rounded-full border border-primary/20 hover:bg-surface-variant transition-all">Quick Start Guide</button>
+</div>
+</div>
+</section>
+<!-- Feed Filters -->
+<div class="flex items-center gap-4 py-2 overflow-x-auto no-scrollbar">
+<button class="px-5 py-2 bg-secondary-container text-on-secondary-container rounded-full text-sm font-semibold whitespace-nowrap">Relevant</button>
+<button class="px-5 py-2 hover:bg-surface-container text-on-surface-variant rounded-full text-sm font-semibold transition-colors whitespace-nowrap">Latest</button>
+<button class="px-5 py-2 hover:bg-surface-container text-on-surface-variant rounded-full text-sm font-semibold transition-colors whitespace-nowrap">Top Threads</button>
+<button class="px-5 py-2 hover:bg-surface-container text-on-surface-variant rounded-full text-sm font-semibold transition-colors whitespace-nowrap">Career Advice</button>
+</div>
+<!-- Posts -->
+<div class="space-y-6">
+<!-- Post 1: Next-Gen AI Chips -->
+<article class="glass-panel rounded-xl p-6 border border-outline-variant/10 shadow-xl shadow-black/20 group hover:bg-surface-variant/70 transition-all">
+<div class="flex gap-6">
+<div class="flex flex-col items-center gap-2 py-2 px-1 rounded-full bg-surface-container-low h-fit">
+<button class="p-1 hover:text-primary text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">expand_less</span>
+</button>
+<span class="text-xs font-bold text-on-surface">1.2k</span>
+<button class="p-1 hover:text-error text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+<div class="flex-1 space-y-3">
+<div class="flex items-center gap-2 text-xs font-medium text-on-surface-variant">
+<span class="text-indigo-400">g/HardwareEngineering</span>
+<span>•</span>
+<span>Posted by u/SiliconDreams</span>
+<span>•</span>
+<span>4h ago</span>
+</div>
+<h2 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Architecture of Next-Gen AI Chips: Beyond the Transistor</h2>
+<p class="font-body text-on-surface-variant/90 leading-relaxed">
+                                Discussion on the shift towards neuromorphic computing and how asychronous processing is changing the way we handle LLM inference at the edge. The bottleneck isn't the compute anymore; it's the memory wall.
+                            </p>
+<div class="flex items-center gap-6 pt-4">
+<button class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm">chat_bubble_outline</span>
+<span>142 Comments</span>
+</button>
+<button class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm">share</span>
+<span>Share</span>
+</button>
+<button class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm">bookmark_border</span>
+<span>Save</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Post 2: Sustainable Hardware Design (with Image) -->
+<article class="glass-panel rounded-xl overflow-hidden border border-outline-variant/10 shadow-xl shadow-black/20 group hover:bg-surface-variant/70 transition-all">
+<div class="p-6">
+<div class="flex gap-6">
+<div class="flex flex-col items-center gap-2 py-2 px-1 rounded-full bg-surface-container-low h-fit">
+<button class="p-1 hover:text-primary text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">expand_less</span>
+</button>
+<span class="text-xs font-bold text-on-surface">845</span>
+<button class="p-1 hover:text-error text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+<div class="flex-1 space-y-3">
+<div class="flex items-center gap-2 text-xs font-medium text-on-surface-variant">
+<span class="text-tertiary">g/Sustainability</span>
+<span>•</span>
+<span>Posted by u/EcoTechLead</span>
+<span>•</span>
+<span>8h ago</span>
+</div>
+<h2 class="font-headline text-xl font-bold text-on-surface group-hover:text-tertiary transition-colors">Sustainable Hardware Design: Modular Electronics in 2024</h2>
+<p class="font-body text-on-surface-variant/90 leading-relaxed">
+                                    We are exploring new bioplastics for housing units and easier disassembly paths for rare-earth element recovery. The circular economy isn't just a buzzword; it's a design requirement now.
+                                </p>
+</div>
+</div>
+</div>
+<div class="relative h-72 w-full">
+<img alt="Sustainable Hardware Design Concepts" class="w-full h-full object-cover" data-alt="Abstract modular electronic components on a soft blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWmEnsma7OUyUnmBiITmbumYPzG0C-XsLmxlVGNqPdv3Pmigv4pVEz4mv8V-rnCTQfyecAYa-sokSgJ3vEfcK-FODW9kPCyJSDBXruGJXJzUpXnW_fWnXTtN98JjDhF_3k1dIO5ptYT9YcqVHPb8DLr_PMX_CGzUCc4tGW193DctJC1cNBbJF1xbUPyuj53BopiSEItEnJ7KK1uAQo8E7gAQJ3TtHobYgjewXwRbElR4y_ENvx28WSFfIw4zuW1JBfSQ_qM2_5vM8P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/40 to-transparent"></div>
+</div>
+<div class="p-4 px-6 bg-surface-container/30">
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm">chat_bubble_outline</span>
+<span>68 Comments</span>
+</button>
+<button class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm">share</span>
+<span>Share</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Right Sidebar (Profile/Trending) -->
+<aside class="hidden xl:flex w-80 fixed right-[max(0px,calc(50%-48rem))] top-16 h-[calc(100vh-4rem)] p-8 flex-col gap-8 overflow-y-auto">
+<!-- Profile Widget -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10">
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="h-20 w-20 rounded-full p-1 bg-gradient-to-tr from-primary to-tertiary">
+<div class="h-full w-full rounded-full bg-surface-container-high flex items-center justify-center text-2xl font-black text-on-surface">AR</div>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface">Alex Rivers</h3>
+<p class="text-xs text-on-surface-variant">Senior Product Designer @ Genesis</p>
+</div>
+<div class="grid grid-cols-2 w-full gap-4 pt-4">
+<div class="flex flex-col items-center p-3 bg-surface-container-low rounded-lg">
+<span class="text-xl font-bold text-indigo-400">4.2k</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Reputation</span>
+</div>
+<div class="flex flex-col items-center p-3 bg-surface-container-low rounded-lg">
+<span class="text-xl font-bold text-tertiary">28</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Groups</span>
+</div>
+</div>
+<button class="w-full py-2 bg-surface-container-high border border-outline-variant/30 rounded-full text-sm font-bold text-on-surface hover:bg-surface-variant transition-colors">View Dashboard</button>
+</div>
+</div>
+<!-- Trending Widget -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10">
+<h4 class="font-headline text-sm font-bold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">trending_up</span>
+                    Trending Now
+                </h4>
+<div class="space-y-5">
+<div class="space-y-1 group cursor-pointer">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Technolgy</p>
+<p class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Web3 Governance Frameworks</p>
+<p class="text-[10px] text-on-surface-variant">2.4k members discussing</p>
+</div>
+<div class="space-y-1 group cursor-pointer">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Sustainability</p>
+<p class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Grid-Scale Sodium Batteries</p>
+<p class="text-[10px] text-on-surface-variant">1.1k members discussing</p>
+</div>
+<div class="space-y-1 group cursor-pointer">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Design</p>
+<p class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Spatial UI Principles for AR</p>
+<p class="text-[10px] text-on-surface-variant">940 members discussing</p>
+</div>
+</div>
+</div>
+<!-- Recommended Communities -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10">
+<h4 class="font-headline text-sm font-bold text-on-surface mb-4">Recommended</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xs">ML</div>
+<span class="text-xs font-bold text-on-surface">g/MachineLearning</span>
+</div>
+<button class="px-3 py-1 bg-surface-variant text-primary text-[10px] font-bold rounded-full hover:bg-primary hover:text-on-primary-fixed transition-all">Join</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-lg bg-tertiary-container/20 flex items-center justify-center text-tertiary font-bold text-xs">UX</div>
+<span class="text-xs font-bold text-on-surface">g/UXResearch</span>
+</div>
+<button class="px-3 py-1 bg-surface-variant text-primary text-[10px] font-bold rounded-full hover:bg-primary hover:text-on-primary-fixed transition-all">Join</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Mobile Navigation (Bottom) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface-variant/90 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-3 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-weight="fill">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-bold">Groups</span>
+</button>
+<button class="bg-gradient-to-r from-primary to-primary-container h-12 w-12 rounded-full flex items-center justify-center text-on-primary-fixed shadow-lg -mt-8">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">work</span>
+<span class="text-[10px] font-bold">Jobs</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-bold">Alerts</span>
+</button>
+</nav>
+</body></html>

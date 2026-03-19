@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Genesis Luxe | Obsidian Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#8387ff",
+              "secondary-container": "#ab3600",
+              "primary-container": "#9396ff",
+              "error": "#ff6e84",
+              "surface": "#060e20",
+              "surface-container-high": "#141f38",
+              "secondary-dim": "#ff7441",
+              "on-secondary": "#410f00",
+              "secondary-fixed": "#ffc4b1",
+              "inverse-primary": "#494bd7",
+              "on-error": "#490013",
+              "outline-variant": "#40485d",
+              "on-tertiary-container": "#000000",
+              "on-surface": "#dee5ff",
+              "surface-container": "#0f1930",
+              "primary-fixed": "#9396ff",
+              "surface-dim": "#060e20",
+              "on-background": "#dee5ff",
+              "surface-variant": "#192540",
+              "on-surface-variant": "#a3aac4",
+              "tertiary": "#c180ff",
+              "secondary": "#ff7441",
+              "on-tertiary": "#33005b",
+              "inverse-surface": "#faf8ff",
+              "on-tertiary-fixed-variant": "#560094",
+              "on-error-container": "#ffb2b9",
+              "on-secondary-fixed": "#631b00",
+              "surface-container-lowest": "#000000",
+              "on-primary-fixed": "#000000",
+              "primary": "#a3a6ff",
+              "surface-container-low": "#091328",
+              "error-dim": "#d73357",
+              "primary-dim": "#6063ee",
+              "on-secondary-fixed-variant": "#932d00",
+              "on-secondary-container": "#fff6f3",
+              "inverse-on-surface": "#4d556b",
+              "on-tertiary-fixed": "#270048",
+              "tertiary-container": "#af5cfe",
+              "tertiary-fixed-dim": "#c488ff",
+              "background": "#060e20",
+              "outline": "#6d758c",
+              "error-container": "#a70138",
+              "on-primary": "#0f00a4",
+              "tertiary-dim": "#9c48ea",
+              "on-primary-container": "#0a0081",
+              "surface-bright": "#1f2b49",
+              "surface-tint": "#a3a6ff",
+              "secondary-fixed-dim": "#ffb197",
+              "tertiary-fixed": "#ce9bff",
+              "surface-container-highest": "#192540",
+              "on-primary-fixed-variant": "#0e009d"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"],
+              "mono": ["DM Mono"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mesh-gradient-bg {
+            background: radial-gradient(at 0% 0%, rgba(163, 166, 255, 0.15) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(193, 128, 255, 0.1) 0px, transparent 50%);
+        }
+        .glass-panel {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .solar-glow:hover {
+            box-shadow: 0 0 20px rgba(255, 116, 65, 0.2);
+        }
+        .primary-glow:hover {
+            box-shadow: 0 0 15px rgba(163, 166, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary min-h-screen">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#060e20]/40 backdrop-blur-xl flex justify-between items-center px-8 h-16 w-full shadow-[0_10_40px_rgba(163,166,255,0.08)]">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[#a3a6ff] to-[#c180ff] font-headline tracking-tight">Genesis Luxe</span>
+<div class="hidden md:flex items-center gap-2 px-4 py-1.5 bg-surface-container-lowest rounded-full border border-outline-variant/15 w-80">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+<input class="bg-transparent border-none text-sm focus:ring-0 text-on-surface placeholder:text-on-surface-variant w-full" placeholder="Explore the network..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-8 font-['Manrope'] tracking-tight">
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#a3a6ff] border-b-2 border-[#a3a6ff] pb-1 hover:text-white transition-colors duration-300" href="#">Network</a>
+<a class="text-[#a3aac4] hover:text-white transition-colors duration-300" href="#">Jobs</a>
+<a class="text-[#a3aac4] hover:text-white transition-colors duration-300" href="#">Messaging</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#a3aac4] hover:text-white transition-colors duration-300 active:scale-95 transition-transform">notifications</button>
+<button class="material-symbols-outlined text-[#a3aac4] hover:text-white transition-colors duration-300 active:scale-95 transition-transform">apps</button>
+<button class="bg-secondary text-on-secondary px-6 py-1.5 rounded-xl font-bold text-sm active:scale-95 transition-transform shadow-lg shadow-secondary/10 hover:brightness-110">Post</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a modern stylish professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8EXt7EjEdb23OxX9H8eIPW8EzryjfyshaGgP8D77LiEH0Thbhr534ta6gf2KubtB4SgwFmmRkHunZEHBRT31Zdy5c7FxeemhjdBz1G9KPeq7aHvnqMXEZq0imd4IphEzsIlHu_qGHid_CSeyVEb_3LjISwvymqNJN_Y8ViERyQj4JUFDhQ_-V8GvZ3Eiwh87nOMPkZJ0KwmEDq6KeN_jbZDb42zfn6WP66VAwDWucsQF7rHdH1U57jGqtSKlbJTmox15RfOClpmg9"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Sidebar Navigation (Hidden on Mobile) -->
+<aside class="fixed left-0 top-16 hidden lg:flex flex-col gap-2 p-4 h-[calc(100vh-4rem)] w-64 border-r border-[#a3aac4]/15 bg-[#060e20]">
+<div class="mb-6 p-4 rounded-2xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-10 h-10 rounded-xl overflow-hidden shadow-2xl">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Professional headshot of Alex Rivers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVOXTNc5f88XevFxK2CbwE02XrnWnLB4egD8QMU6BnRe9s_HRylKJiHQ6WTaGVDdK1VIieytunMbFhgxP1mDlxVSEtDljHvyAZrwRCXORsra9cUDmKmTYNRlJC0goG2KVq5G3uXJYW6ZiO2I5FCmVpiyWfQTdBIxii9Lgh-qhUoUWk4v6zjaQ_c-KZADZk021ojCmB6Vh3knxCEKVMOrCn7sDaHdRrJBnV5u-aImiy9rmxxB7nc14qSvhLZ-yheLk-2xTsg5CX9qFk"/>
+</div>
+<div>
+<h3 class="font-bold text-sm text-on-surface">Alex Rivers</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Creative Director</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-[#a3a6ff]/10 text-[#a3a6ff] rounded-lg shadow-[0_0_12px_rgba(163,166,255,0.3)] hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Manrope'] text-sm font-medium">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#a3aac4] hover:bg-[#a3a6ff]/5 hover:text-[#a3a6ff] transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Manrope'] text-sm font-medium">My Network</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#a3aac4] hover:bg-[#a3a6ff]/5 hover:text-[#a3a6ff] transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="font-['Manrope'] text-sm font-medium">Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#a3aac4] hover:bg-[#a3a6ff]/5 hover:text-[#a3a6ff] transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-['Manrope'] text-sm font-medium">Messaging</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#a3aac4] hover:bg-[#a3a6ff]/5 hover:text-[#a3a6ff] transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-['Manrope'] text-sm font-medium">Notifications</span>
+</a>
+</nav>
+<div class="mt-auto p-4 rounded-2xl bg-gradient-to-br from-primary-dim/20 to-tertiary-dim/20 border border-primary/20">
+<p class="text-xs text-on-surface-variant mb-3">Elevate your reach with Genesis Pro</p>
+<button class="w-full py-2 bg-on-surface text-surface rounded-xl text-xs font-bold hover:bg-white transition-colors">Go Premium</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-24 px-8 pb-12 mesh-gradient-bg min-h-screen">
+<div class="max-w-7xl mx-auto">
+<!-- Hero Header Section -->
+<header class="mb-16">
+<h1 class="text-6xl md:text-8xl font-black font-headline tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-on-surface via-primary to-tertiary">
+                    Welcome to Genesis.
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl leading-relaxed">
+                    The curated obsidian digital workspace for high-growth collectives and creative leaders.
+                </p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Main Feed Column -->
+<div class="md:col-span-8 flex flex-col gap-8">
+<!-- Composer Card -->
+<div class="glass-panel p-6 rounded-[2rem] border border-outline-variant/15 flex gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-primary/20">
+<img alt="Current User" class="w-full h-full object-cover" data-alt="Portrait of Alex Rivers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiW6FfeAviJ4kXKEfJTYDr1yZfunjme-Pc9UinO6X5dkCgrNZcD560ozCONOSwaPDJyf0JcbJmJIrsZHtcIfQcc7QBlfbzma9tclRa9LAscMNnW5PV2lSR4sdeJYyjAIs3nrIuUsa-nKVRxdn2Fj82rm2A2-tBlhA0vJleaheFOSeZrULxqQ_p6xJXJKBHT5Zh8ARZ1dgawaC0dEB3duNieV9_bwiQuDjXRyC5ucifheiJ0U31_a1_SiBSrQfl1bKsgoa0FsciJVkD"/>
+</div>
+<div class="flex-grow">
+<button class="w-full text-left px-6 py-3 rounded-full bg-surface-container-lowest/50 text-on-surface-variant hover:bg-surface-container-lowest transition-colors border border-outline-variant/10">
+                                Share a new breakthrough, Alex...
+                            </button>
+<div class="flex gap-4 mt-4 px-2">
+<button class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">image</span> Image
+                                </button>
+<button class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">movie</span> Video
+                                </button>
+<button class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">event</span> Event
+                                </button>
+</div>
+</div>
+</div>
+<!-- Post Item 1: Visual/Editorial -->
+<article class="glass-panel rounded-[2.5rem] overflow-hidden border border-outline-variant/15 group hover:border-primary/30 transition-all duration-500 primary-glow">
+<div class="relative h-96 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent z-10"></div>
+<img alt="Abstract Art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Abstract vibrant purple and blue flowing mesh gradient texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7M41q7CGR04isfI-9iYtEXRjlXNYV0T16QmJ6_c8qkrt1yIKVCSK8aQWGFmjH-XcDZfceyCYidjnzrknAKjuiQ4EKb7JjnYEl61cmjCz0G2mAT1cpAK-K2vL7XkbHoC61z8dDmfOel6ak5_oIwMDkdo1nDlt7hHj5s4CD7Zv8bm0z8P_kCBqY9Ub8iIujA28oAPbAeGDdnQIz9EVmEWxEgkqC_mLAlj_tlPbsDeyOcUMwQ2wFM3Dbr6divT0CMGXg79m_iXtKMmJ3"/>
+<div class="absolute bottom-6 left-8 z-20">
+<span class="bg-primary/20 text-primary backdrop-blur-md px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border border-primary/20">Featured Insight</span>
+<h2 class="text-3xl font-bold mt-2 text-white">The Future of Neural Interface UI</h2>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/20 border border-tertiary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">psychology</span>
+</div>
+<div>
+<p class="text-sm font-bold">Dr. Aris Thorne</p>
+<p class="text-xs text-on-surface-variant">Cognitive Designer • 4h ago</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">more_horiz</button>
+</div>
+<p class="text-on-surface/90 leading-relaxed mb-6 font-light text-lg">
+                                We are moving beyond the screen. The next decade of design isn't about pixels; it's about neural latency and sensory feedback loops. How do we build empathy into an invisible interface?
+                            </p>
+<div class="flex items-center gap-6 pt-6 border-t border-outline-variant/10">
+<button class="flex items-center gap-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span> 1.2k
+                                </button>
+<button class="flex items-center gap-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span> 84
+                                </button>
+<button class="flex items-center gap-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="ml-auto material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">bookmark</button>
+</div>
+</div>
+</article>
+<!-- Post Item 2: Technical/Code Snippet -->
+<article class="glass-panel p-8 rounded-[2rem] border border-outline-variant/15 primary-glow transition-all">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-tertiary p-[1px]">
+<div class="w-full h-full bg-surface-container rounded-xl flex items-center justify-center overflow-hidden">
+<img alt="Author" class="w-full h-full object-cover" data-alt="Portrait of a developer in high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG0enl5A5fZT6Qwd4YYAPZCGo2HHIx5kC1QBJqwCQ5OCfsJpFY3IHpSJLwIHDelYqHBje91wQYhpug15SHqbaLcLIP1-LNmKJaDLYq60RPlHfLBFCMVhI9c4of8h9mG-6e3zPWLBA6i9HnINgeNR1ljUUqizW-o2VFlRdk8RW2JvYefcIFgjMrHJmASQ7v6CjH98EHsggZrqjUL2CrU6UfvhkNf8Xmx2gzLm2U5url9eg6LBYCXNho6BmN5uJG3gIISMv2ChwPYbXe"/>
+</div>
+</div>
+<div>
+<h4 class="font-bold">Julian Vane</h4>
+<p class="text-xs text-on-surface-variant">Full-Stack Architect @ Vercel</p>
+</div>
+<span class="ml-auto text-xs text-on-surface-variant">12m ago</span>
+</div>
+<p class="mb-4 text-on-surface/80">Optimized my rendering engine for 4ms latency. The results are night and day for real-time collaboration tools. <span class="text-primary">#WebDev #Performance</span></p>
+<div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/10 font-mono text-sm overflow-hidden mb-6 relative">
+<div class="absolute top-4 right-4 flex gap-2">
+<div class="w-2 h-2 rounded-full bg-error/40"></div>
+<div class="w-2 h-2 rounded-full bg-secondary/40"></div>
+<div class="w-2 h-2 rounded-full bg-primary/40"></div>
+</div>
+<pre class="text-primary-fixed-dim"><code>const render = (state) =&gt; {
+  const diff = reconcile(prev, state);
+  return diff.map(node =&gt; {
+    return applyPhysics(node, friction);
+  });
+};</code></pre>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-lg">thumb_up</span> 342</button>
+<button class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-lg">mode_comment</span> 12</button>
+</div>
+</article>
+</div>
+<!-- Sidebar / Trending Column -->
+<div class="md:col-span-4 flex flex-col gap-8">
+<!-- Trending Bento Card -->
+<section class="glass-panel p-8 rounded-[2rem] border border-outline-variant/15 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[60px] rounded-full"></div>
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                            Trending Alpha
+                        </h3>
+<div class="flex flex-col gap-6">
+<div class="group cursor-pointer">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Architecture</p>
+<h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors">Sustainable Digital Brutalism</h4>
+<p class="text-xs text-on-surface-variant mt-1">4.2k discussing</p>
+</div>
+<div class="group cursor-pointer">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Economics</p>
+<h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors">The Solarpunk Finance Model</h4>
+<p class="text-xs text-on-surface-variant mt-1">1.8k discussing</p>
+</div>
+<div class="group cursor-pointer">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Design</p>
+<h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors">Glassmorphism vs. Skeuomorphism</h4>
+<p class="text-xs text-on-surface-variant mt-1">890 discussing</p>
+</div>
+</div>
+<button class="mt-8 text-primary text-sm font-bold hover:underline">View all trends</button>
+</section>
+<!-- Network Activity Card -->
+<section class="glass-panel p-8 rounded-[2rem] border border-outline-variant/15">
+<h3 class="text-xl font-bold mb-6">Recent Connections</h3>
+<div class="space-y-5">
+<div class="flex items-center gap-3">
+<img alt="Person" class="w-10 h-10 rounded-full border border-primary/20" data-alt="Portrait of a female executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_5qXGvn8pIZeXeCrBVPplJsFQfXOuRsuWDth0dIhyjyx4M9uJVQ0XmjAS6cDM_aZLraKd2LPcPmE-SVCk6EA4NGOknYHQ9UO3zBNC7Yk246Y9bMs-c8CXtruC05OPExv4Iph9g13NnsBpE3qYAII3v5TpMcssI11JqOtHzFndQCzoyXwoWgDMMou2hcUoxc_JmoZS3a21J6ornmCzOzPR_ouW1tQKxb7RnWMWp-OhDhb-HMYD2fEq4zWYhxWnkfg6yjH7ESawCY8_"/>
+<div class="flex-grow">
+<p class="text-sm font-bold">Elena Vance</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Product at Notion</p>
+</div>
+<button class="material-symbols-outlined text-primary text-lg hover:scale-110 transition-transform">person_add</button>
+</div>
+<div class="flex items-center gap-3">
+<img alt="Person" class="w-10 h-10 rounded-full border border-primary/20" data-alt="Portrait of a young tech entrepreneur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD57LJDzZIA0aJz2uzUL_S0UzSyy089SoLoUpFMZy6J7fRGg6e5x58p92tD5ExqZdV1MEDHNWi61f0DVmB_rXoHOIgY1--WCKvwTfWk1dSR98zEcfqXufoRACXM9SzeN92jl0SuzBE334-ks5FRsjFqQO4eCI89udD4I6wbxI9amVL6LljOleTTLXarSEXhFuKrA1monW0-j8MvuizV5nQjxGxCO6gyE_WH_gJ4fZOXAGTEXfAwSsmGbxPjiNdnG7EohGE_hvRSwgWm"/>
+<div class="flex-grow">
+<p class="text-sm font-bold">Marcus Chen</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Founder of Aura</p>
+</div>
+<button class="material-symbols-outlined text-primary text-lg hover:scale-110 transition-transform">person_add</button>
+</div>
+</div>
+</section>
+<!-- Editorial Ad -->
+<div class="rounded-[2rem] bg-gradient-to-br from-[#c180ff] to-[#a3a6ff] p-8 text-on-tertiary relative overflow-hidden group cursor-pointer shadow-2xl">
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-white/20 blur-[50px] rounded-full group-hover:scale-150 transition-transform duration-1000"></div>
+<p class="text-[10px] font-black uppercase tracking-[0.2em] mb-4">Masterclass</p>
+<h3 class="text-3xl font-black leading-tight mb-4">Designing for Decades.</h3>
+<p class="text-sm font-medium opacity-90 mb-6">Learn the principles of longevity in a transient digital landscape.</p>
+<button class="bg-on-tertiary text-white px-6 py-2 rounded-xl text-sm font-bold solar-glow">Reserve Seat</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation for Mobile -->
+<div class="md:hidden fixed bottom-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-lg border-t border-outline-variant/10 px-8 py-4 flex justify-between items-center shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<button class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">home</button>
+<button class="material-symbols-outlined text-on-surface-variant">group</button>
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center -mt-8 shadow-lg shadow-secondary/30">
+<span class="material-symbols-outlined text-on-secondary font-bold">add</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">chat_bubble</button>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Me" class="w-full h-full object-cover" data-alt="Portrait of Alex Rivers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwblSiw3hFr5xeZ2xdOuwa_i6R0JmxnqcdI2QBiY7yqI4OdgMlAIZL0OggDsFlHRN2t43EZ0CgiPC_X4rifNwIUo4axqYm0xWI2b-GFwYgikur-zFFd_QGu7Wyvd5XVjZKcnMUdOwzEP_MTw0q9QlAdQWxWdCENH_WsQp29Sx4z_jiMIxpxnSAVo2GKqyuht3KVrb6ZGH38T4eW6TvFFbKxtT3uXn9RGbLZ930Pu42gJAwDB6y3BCQQRuOVF09srDrEsjCbuoFzxPT"/>
+</div>
+</div>
+</body></html>
